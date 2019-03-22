@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Live breakscreen for Twitch.tv/aznmike123">
+	<meta name="keywords" content="twitch, overlay">
+	<meta name="author" content="Michael Macasiano">
+	<title>Video games are awful</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<script>
+	function startTime() {
+		var today = new Date();
+		var h = today.getHours();
+		var m = today.getMinutes();
+		m = checkTime(m);
+		document.getElementById('timeHours').innerHTML = h;
+		document.getElementById('timeMinutes').innerHTML = m;
+
+		var beats = Math.floor( ( 360*UTCplusOne(today.getUTCHours()) + 60*m + today.getSeconds() ) / 86.4);
+		document.getElementById('timeBeats').innerHTML = beats;
+
+		var t = setTimeout(startTime, 500);
+	}
+	function checkTime(i) {
+		if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+		return i;
+	}
+	function UTCplusOne(i) {
+		i++;
+		if (i > 23) {i = 0};
+		return i;
+	}
+</script>
+
+<body onload="startTime()">
+	<div id="streamCanvas">
+		<div id="topBar">
+			<div class="topBarLeft">
+				<i class="fas fa-th topBarBlock leftBlock"></i>
+				<div class="topBarBlock leftBlock"><i class="fab fa-twitch"></i> /aznmike123</div>
+				<div class="topBarBlock leftBlock">
+					<i class="fab fa-twitter"></i>
+					<i class="fab fa-instagram"></i>
+					<i class="fab fa-dribbble"></i> /mikeheartu
+				</div>
+				<div class="topBarBlock leftBlock">videogamesareawful.com</div>
+			</div>
+
+			<div class="topBarMiddle">
+				<div class="topBarBlock">mikeOS v3</div>
+			</div>
+
+			<div class="topBarRight">
+				<div class="topBarBlock rightBlock">@.<span id="timeBeats"></span></div>
+				<div class="topBarBlock rightBlock">
+					<span id="timeHours"></span>
+					<span class="clockTicker">:</span>
+					<span id="timeMinutes"></span>
+				</div>
+				<div class="topBarBlock rightBlock"><i class="fas fa-wifi"></i> free-wifi</div>
+				<div class="topBarBlock rightBlock"><i class="fas fa-battery-three-quarters"></i> 72%</div>
+				<i class="fas fa-bell topBarBlock rightBlock"></i>
+			</div>
+		</div>
+
+		<div id="osToast">
+			<div class="toastText">follow the stream and stuff<i class="fas fa-info-circle toastInfo"></i></div>
+			<div class="toastGradient"></div>
+		</div>
+
+		<div class="osWindow osWindowHighlight" id="osNowPlaying">
+			<div class="osWindowTop">
+				<div class="windowTopBlock"><i class="fas fa-bars windowTopUI"></i></div>
+				<div class="windowTopBlock">satisfactory-gameplay.mp4</div>
+				<div class="windowTopBlock">
+					<i class="fas fa-stop-circle windowTopUI"></i>
+					<i class="fas fa-times-circle windowTopUI"></i>
+				</div>
+			</div>
+			<video autoplay muted loop id="nowPlayingVideo">
+				<source src="img/satisfactory-gameplay.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div class="osWindow osWindowBackground" id="osHumbleMonthly">
+			<div class="osWindowTop">
+				<div class="windowTopBlock"><i class="fas fa-bars windowTopUI"></i></div>
+				<div class="windowTopBlock">humble-monthly.png</div>
+				<div class="windowTopBlock">
+					<i class="fas fa-stop-circle windowTopUI"></i>
+					<i class="fas fa-times-circle windowTopUI"></i>
+				</div>
+			</div>
+			<img src="img/humble-monthly.png" class="osImage" height="300" />
+		</div>
+
+		<div class="osWindow osWindowBackground" id="osBookClub">
+			<div class="osWindowTop">
+				<div class="windowTopBlock"><i class="fas fa-bars windowTopUI"></i></div>
+				<div class="windowTopBlock">vgbc.png</div>
+				<div class="windowTopBlock">
+					<i class="fas fa-stop-circle windowTopUI"></i>
+					<i class="fas fa-times-circle windowTopUI"></i>
+				</div>
+			</div>
+			<img src="img/vgbc-artwork.png" class="osImage" height="250" />
+		</div>
+	</div>
+</body>
+
+</html>

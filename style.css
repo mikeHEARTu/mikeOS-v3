@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body
+{
+	background: black;
+	color:#ebf1f5;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 18px;
+}
+#streamCanvas
+{
+	position: absolute;
+	width: 1920px;
+	height:1080px;
+	top: 0;
+	left: 0;
+	overflow:hidden;
+	background-image: url("img/mvp-253454-unsplash.jpg");
+	background-size: cover;
+}
+#topBar
+{
+	background:#2c3e50;
+	position: absolute;
+	top:20px;
+	left:20px;
+	width:1880px;
+
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	line-height: 1em;
+
+	animation-name:fadeInDown;
+	animation-duration:0.5s;
+	animation-delay: 0.5s;
+	animation-fill-mode: backwards;
+}
+.topBarLeft
+{
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+
+	background:#27ae60;
+	border-top-right-radius: 100px;
+	border-bottom-right-radius: 100px;
+}
+.topBarRight
+{
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+
+	background:#2980b9;
+	border-top-left-radius: 100px;
+	border-bottom-left-radius: 100px;
+}
+.topBarBlock
+{
+	display: inline-block;
+	padding: 5px 20px;
+}
+.leftBlock
+{
+	background-image: linear-gradient(to right, #27ae60, #2ecc71);
+	border-top-right-radius: 100px;
+	border-bottom-right-radius: 100px;
+}
+.rightBlock
+{
+	background-image: linear-gradient(to left, #2980b9, #3498db);
+	border-top-left-radius: 100px;
+	border-bottom-left-radius: 100px;
+}
+
+.clockTicker
+{
+	animation-name:fadeIn;
+	animation-duration:1s;
+	animation-iteration-count: infinite;
+}
+#osToast
+{
+	position: absolute;
+	right:20px;
+	top:60px;
+	z-index:100000;
+
+	background:#2c3e50;
+	background:rgba(44, 62, 80,0.5);
+	
+	animation-name:scaleIn;
+	animation-duration:0.5s;
+	animation-delay: 1.75s;
+	animation-fill-mode: backwards;
+}
+.toastText
+{
+	padding: 20px 20px;
+	font-style: italic;
+}
+.toastInfo
+{
+	margin-left: 20px;
+}
+.toastGradient
+{
+	height:4px;
+	background-image: linear-gradient(to right, #2ecc71, #3498db);
+}
+.osWindow
+{
+	font-size:14px;
+
+	background:#2c3e50; 
+	background-image: linear-gradient(to right, #2ecc71, #3498db);
+
+	padding-bottom:4px;
+}
+.osWindowTop
+{
+	background:#2c3e50;
+	padding: 5px 0px;
+
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	line-height: 1em;
+}
+.windowTopBlock
+{
+	padding: 0px 5px;
+}
+.windowTopUI
+{
+	opacity: 0.35;
+}
+.osWindowHighlight
+{
+	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+}
+#osNowPlaying
+{
+	position: absolute;
+	top:134px;
+	left:48px;
+	z-index: 10000;
+
+	animation-name:scaleIn;
+	animation-duration:0.5s;
+	animation-delay: 1.5s;
+	animation-fill-mode: backwards;
+}
+#nowPlayingVideo
+{
+	display: block;
+}
+.osWindowBackground
+{
+	color:#bdc3c7;
+	background:#ecf0f1;
+	background:rgba(236, 240, 241,0);
+	background-image: linear-gradient(to right, rgba(236, 240, 241,0.5), rgba(127, 140, 141,0.5));
+}
+.osImage
+{
+	display: block;
+}
+#osHumbleMonthly
+{
+	position: absolute;
+	bottom:76px;
+	right:48px;
+	z-index: 1001;
+
+	animation-name:scaleIn;
+	animation-duration:0.5s;
+	animation-delay: 1.25s;
+	animation-fill-mode: backwards;
+}
+#osBookClub
+{
+	position: absolute;
+	bottom:417px;
+	right:133px;
+	z-index: 1000;
+
+	animation-name:scaleIn;
+	animation-duration:0.5s;
+	animation-delay: 1s;
+	animation-fill-mode: backwards;
+}
+
+@keyframes fadeIn
+{
+    from
+	{
+		filter:opacity(0);
+	}
+	to
+	{
+		filter:opacity(1);
+	}
+}
+@keyframes fadeInDown
+{
+    from
+	{
+		filter:opacity(0);
+		transform: translateY(-10px); 
+	}
+	to
+	{
+		filter:opacity(1);
+	}
+}
+@keyframes scaleIn
+{
+    from
+	{
+		transform: scale(0.9, 0.9);
+		filter:opacity(0);
+	}
+	to
+	{
+		filter:opacity(1);
+	}
+}
