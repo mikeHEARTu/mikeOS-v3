@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto Black');
 
 body
 {
@@ -191,6 +191,36 @@ body
 	animation-name:scaleIn;
 	animation-duration:0.5s;
 	animation-delay: 1s;
+	animation-fill-mode: backwards;
+}
+
+/* -------------------- preshow -------------------- */
+
+#preshowCanvas
+{
+	position: absolute;
+	width: 1920px;
+	height:1080px;
+	top: 0;
+	left: 0;
+	overflow:hidden;
+	background:#2980b9;
+	background-image: linear-gradient(to right, #2ecc71, #3498db);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+.preshowText
+{
+	font-size:12vw;
+	font-family: 'Roboto Black';
+	line-height: 0.8em;
+
+	animation-name:scaleIn;
+	animation-duration:0.5s;
+	animation-delay: 0.5s;
 	animation-fill-mode: backwards;
 }
 
