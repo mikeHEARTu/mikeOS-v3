@@ -199,8 +199,8 @@ body
 #preshowCanvas
 {
 	position: absolute;
-	width: 1920px;
-	height:1080px;
+	width: 100%;
+	height:100%;
 	top: 0;
 	left: 0;
 	overflow:hidden;
@@ -222,6 +222,56 @@ body
 	animation-duration:0.5s;
 	animation-delay: 0.5s;
 	animation-fill-mode: backwards;
+}
+
+/* -------------------- offline -------------------- */
+
+#offlineCanvas
+{
+	position: absolute;
+	width: 100%;
+	height:100%;
+	top: 0;
+	left: 0;
+	overflow:hidden;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.offlineText
+{	
+	display:inline-block;
+	font-size:9vw;
+	font-family: 'Roboto Black';
+	line-height: 2em;
+	
+	background: rgba(44, 62, 80,0.75);
+
+	animation-name:scaleIn;
+	animation-duration:0.5s;
+	animation-delay: 0.5s;
+	animation-fill-mode: backwards;
+}
+.buffer
+{
+	padding: 7vw;
+}
+.offlineGradient
+{
+	height:1vh;
+	background-image: linear-gradient(to right, #2ecc71, #3498db);
+}
+#offlineVideo
+{
+	display: block;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: -100;
+	width:100%;
+	height:100%;
+	object-fit: cover;
 }
 
 @keyframes fadeIn
